@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Standup Board</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Standup Board</h1>
+    <p class="tagline">What you did, what you're doing, what's in the way.</p>
+  </header>
+
+  <main class="board">
+    <section class="composer" aria-labelledby="composer-title">
+      <h2 id="composer-title">Post your standup</h2>
+      <form id="post-form">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required maxlength="60" placeholder="Your name">
+        </div>
+        <div class="field">
+          <label for="yesterday">Yesterday</label>
+          <textarea id="yesterday" name="yesterday" rows="3" required placeholder="What did you finish?"></textarea>
+        </div>
+        <div class="field">
+          <label for="today">Today</label>
+          <textarea id="today" name="today" rows="3" required placeholder="What are you working on?"></textarea>
+        </div>
+        <div class="field">
+          <label for="blockers">Blockers <span class="optional">(optional)</span></label>
+          <textarea id="blockers" name="blockers" rows="2" placeholder="Anything in your way?"></textarea>
+        </div>
+        <button type="submit">Post update</button>
+      </form>
+    </section>
+
+    <section id="posts" aria-label="Standup posts" aria-live="polite">
+      <!-- app.js renders each post here as:
+        <article class="post">
+          <h3 class="post-name"></h3>
+          <p class="post-yesterday"></p>
+          <p class="post-today"></p>
+          <p class="post-blockers"></p>
+          <time class="post-time" datetime=""></time>
+        </article>
+      -->
+    </section>
+  </main>
+</body>
+</html>
